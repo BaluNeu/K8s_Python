@@ -39,4 +39,4 @@ def delete_repo(owner, repo):
     return jsonify(message="DELETE request sent to GitHub"), response.status_code
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001)
+    app.run(host='0.0.0.0', port=5002)

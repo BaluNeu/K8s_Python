@@ -21,7 +21,7 @@ COPY . /app/
 COPY .env /app/
 
 # Expose the port the app runs on
-EXPOSE 5001
+EXPOSE 5002
 
 # Command to run the application
 CMD ["python3", "app.py"]
