@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-app
+  labels:
+    app: flask-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flask-app
+  template:
+    metadata:
+      labels:
+        app: flask-app
+    spec:
+      containers:
+      - name: flask-app
+        image: blue143/k8spythonj:latest
+        ports:
+        - containerPort: 5002
+        env:
+        - name: GITHUB_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: github-secret
+              key: GITHUB_TOKEN
